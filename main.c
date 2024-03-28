@@ -1,5 +1,7 @@
+#include <errno.h>
 #include "monty.h"
 #include <fcntl.h>
+#include <unistd.h>
 
 /**
  * main - entry point of program
@@ -24,5 +26,8 @@ int main(int ac, char **av)
 		exit(EXIT_FAILURE);
 	}
 	read_file(fd);
+	close(fd);
+	if (errno != 0)
+		exit(EXIT_FAILURE);
 	return (0);
 }

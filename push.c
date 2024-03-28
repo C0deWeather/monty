@@ -15,17 +15,14 @@ void push(stack_t **head, unsigned int line_number)
 	if (isint(line[1]))
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
-		free_line(line);
-		free_stack(*head);
-		exit(EXIT_FAILURE);
+		errno = EINVAL;
+		return;
 	}
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
-		free_line(line);
-		free_stack(*head);
-		exit(EXIT_FAILURE);
+		return;
 	}
 	n = atoi(line[1]);
 	new->n = n;

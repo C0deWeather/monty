@@ -7,7 +7,7 @@
 #include <sys/types.h>
 #include <string.h>
 #include <ctype.h>
-
+#include <errno.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -49,5 +49,6 @@ void pall(stack_t **stack, unsigned int line_number);
 void exec(stack_t **head, unsigned int line_number);
 void free_line(char **line);
 void free_stack(stack_t *head);
+void handle_error(int fd, stack_t *head);
 
 #endif

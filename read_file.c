@@ -31,8 +31,11 @@ void read_file(int fd)
 			continue;
 		}
 		free(buffer);
+		if (line == NULL)
+			break;
 		exec(&head, line_number++);
 		free_line(line);
+		handle_error(fd, head);
 	}
 	free_stack(head);
 }
@@ -68,4 +71,19 @@ ssize_t get_line(char **buffer, size_t *n, int fd)
 	*n = i + 1;
 	offset += i + 1;
 	return (i);
+}
+
+/**
+ * handle_error - handles error from opcodes
+ * @fd: file descriptor of open file
+ * @head: pointer to head of stack
+ */
+void handle_error(int fd, stack_t *head)
+{
+	if (errno != 0)
+	{
+		free_stack(head);
+		close(fd);
+		exit(EXIT_FAILURE);
+	}
 }

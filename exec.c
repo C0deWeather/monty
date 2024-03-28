@@ -24,5 +24,5 @@ void exec(stack_t **head, unsigned int line_number)
 	}
 	fprintf(stderr, "L%u: unknown instruction %s\n",
 		line_number, instruction[i].opcode);
-	exit(EXIT_FAILURE);
+	return;
 }

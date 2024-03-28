@@ -22,8 +22,7 @@ char *_strdup(char *str)
 	if (s == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
-		free(str);
-		exit(EXIT_FAILURE);
+		return (NULL);
 	}
 	/*Copy contents of str into s*/
 	return (strcpy(s, str));
@@ -43,6 +42,11 @@ char **parse_line(char *buffer)
 	char **tokens;
 	char delimiter[] = " ";
 
+	if (tmp_buff == NULL)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		return (NULL);
+	}
 	/*count tokens*/
 	tmp_tok = strtok(tmp_buff, delimiter);
 	for (count = 1; tmp_tok != NULL; count++)
@@ -53,8 +57,7 @@ char **parse_line(char *buffer)
 	if (tokens == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
-		free(buffer);
-		exit(EXIT_FAILURE);
+		return (NULL);
 	}
 	tokens[i] = _strdup(strtok(buffer, delimiter));
 	while (tokens[i] != NULL)
