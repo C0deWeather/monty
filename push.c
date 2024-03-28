@@ -44,7 +44,8 @@ int isint(char *str)
 {
 	if (str == NULL)
 		return (1); /*Not an integer if the string is null*/
-
+	else if (str[0] == '-')
+		str++;
 	while (*str != '\0')
 	{
 		if (!isdigit(*str))
