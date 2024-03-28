@@ -1,5 +1,5 @@
 #include <unistd.h>
-#include "main.h"
+#include "monty.h"
 
 char **line = NULL;
 
@@ -10,13 +10,12 @@ char **line = NULL;
 void read_file(int fd)
 {
 	char *buffer = NULL;
-	unsigned int line_number = 1, i;
+	unsigned int line_number = 1;
 	stack_t *head = NULL;
 	size_t n = 0;
 
 	while (get_line(&buffer, &n, fd) != -1)
 	{
-		printf("buffer: %s\n", buffer);
 		if (*buffer == '\0') /*Check for empty line*/
 		{
 			line_number++;
