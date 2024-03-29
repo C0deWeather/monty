@@ -16,6 +16,7 @@ void exec(stack_t **head, unsigned int line_number)
 		{"swap", swap},
 		{"add", add},
 		{"nop", nop},
+		{"div", _div},
 		{"sub", sub},
 		{"mul", mul},
 		{NULL, NULL},
