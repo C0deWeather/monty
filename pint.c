@@ -2,8 +2,8 @@
 
 /**
  * pint -  prints the value at the top of the stack
- * @head - head of stack
- * @line_number - line number
+ * @head: head of stack
+ * @line_number: line number
  */
 void pint(stack_t **head, unsigned int line_number)
 {

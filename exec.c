@@ -27,5 +27,4 @@ void exec(stack_t **head, unsigned int line_number)
 	fprintf(stderr, "L%u: unknown instruction %s\n",
 		line_number, line[0]);
 	errno = EINVAL;
-	return;
 }
