@@ -18,6 +18,7 @@ void exec(stack_t **head, unsigned int line_number)
 		{"nop", nop},
 		{"div", _div},
 		{"sub", sub},
+		{"mod", mod},
 		{"mul", mul},
 		{NULL, NULL},
 	};
