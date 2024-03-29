@@ -23,7 +23,7 @@ void read_file(int fd)
 			continue;
 		}
 		line = parse_line(buffer);
-		if (*line == NULL || **line = '#')
+		if (*line == NULL || **line == '#')
 		{
 			free(buffer);
 			line_number++;
