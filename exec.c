@@ -11,6 +11,8 @@ void exec(stack_t **head, unsigned int line_number)
 	instruction_t instruction[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
+		{"pop", pop},
 		{NULL, NULL},
 	};
 
