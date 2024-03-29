@@ -28,7 +28,6 @@ void read_file(int fd)
 			break;
 		if (*line == NULL || **line == '#')
 		{
-			free(buffer);
 			line_number++;
 			free_line(line);
 			continue;
