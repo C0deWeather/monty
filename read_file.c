@@ -23,6 +23,9 @@ void read_file(int fd)
 			continue;
 		}
 		line = parse_line(buffer);
+		free(buffer);
+		if (line == NULL)
+			break;
 		if (*line == NULL || **line == '#')
 		{
 			free(buffer);
@@ -30,9 +33,6 @@ void read_file(int fd)
 			free_line(line);
 			continue;
 		}
-		free(buffer);
-		if (line == NULL)
-			break;
 		exec(&head, line_number++);
 		free_line(line);
 		handle_error(fd, head);
@@ -66,6 +66,11 @@ ssize_t get_line(char **buffer, size_t *n, int fd)
 			break;
 	}
 	*buffer = malloc(i + 1);
+	if (*buffer == NULL)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		return (-1);
+	}
 	strncpy(*buffer, tmp, i);
 	(*buffer)[i] = '\0';
 	*n = i + 1;

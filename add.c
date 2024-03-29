@@ -17,5 +17,5 @@ void add(stack_t **head, unsigned int line_number)
 	}
 	result = ((*head)->n) + ((*head)->next->n);
 	pop(head, line_number);
-	(*head)->n = result;	
+	(*head)->n = result;
 }

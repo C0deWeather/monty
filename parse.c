@@ -20,10 +20,7 @@ char *_strdup(char *str)
 
 	/*Condition for unsuccessful allocation*/
 	if (s == NULL)
-	{
-		fprintf(stderr, "Error: malloc failed\n");
 		return (NULL);
-	}
 	/*Copy contents of str into s*/
 	return (strcpy(s, str));
 }
