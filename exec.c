@@ -20,6 +20,8 @@ void exec(stack_t **head, unsigned int line_number)
 		{"sub", sub},
 		{"mod", mod},
 		{"mul", mul},
+		{"pchar", pchar},
+		{"pstr", pstr},
 		{NULL, NULL},
 	};
 
