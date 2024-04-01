@@ -64,5 +64,6 @@ void exec(stack_t **head, unsigned int line_number);
 void free_line(char **line);
 void free_stack(stack_t *head);
 void handle_error(int fd, stack_t *head);
+size_t stck_len(stack_t *head);
 
 #endif

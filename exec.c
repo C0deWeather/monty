@@ -22,6 +22,7 @@ void exec(stack_t **head, unsigned int line_number)
 		{"mul", mul},
 		{"pchar", pchar},
 		{"pstr", pstr},
+		{"rotl", rotl},
 		{NULL, NULL},
 	};
 
